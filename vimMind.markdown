@@ -33,7 +33,8 @@
   *:.,Xd* - delete from current line to line X
   *diw* or *daw* - delete inside/around word
   *db* - delete cursor to previous start word, see: d|, d$, de
-  *dG* - delete cursor to end file, dgg - delete cursor to begin file
+  *dG* - delete cursor to end file, 
+  *dgg* - delete cursor to begin file
   *cis* - change inside sentence
   *ci"* - change inside quote
   *c/foo* - change from cursor to search foo
@@ -161,10 +162,6 @@
   ctrl+v - open selected file in new vertical split
   ctrl+t - open selected file in new tab
 
-### copy and paste
-
-  ctrl+c, ctrl+v
-  ctrl-z, ctrl+y
 
   \ map to :
 
