@@ -22,6 +22,7 @@ Bundle 'Shougo/neosnippet-snippets'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'functionList.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'majutsushi/tagbar'
 
 Bundle 'flazz/vim-colorschemes'
 
