@@ -101,7 +101,7 @@
 
 
 
-## Multiple cursor - exists several plugins that overwrite ctrl+n combination.
+## Multiple cursor plugin 
 
   -  // ctrl+n "select how many words you need" after that click "v" and interage with "i" or "a", etc...
   -  *Ctrl + n* - select
@@ -126,14 +126,14 @@
 
 ## SPLIT BUFFER == file open or new file
 
-  -  *<C-w>* - work with buffer
-  -  *<C-w>n* - NEW horizontal buffer
-  -  *<C-w>c* - CLOSE current buffer
-  -  *<C-w>v* - NEW vertical buffer
-  -  *<C-w>s* - split current buffer
-  -  *<C-w>p* - move cursor to previous window
-  -  *<C-w>j* or *k* or *l* or *j* - navigate beetwew window
-  -  *<C-w>=* or *'-'* or *'+'* - equal size window, decrease increase size
+  -  *<Ctrl+w>* - work with buffer
+  -  *<Ctrl+w>n* - NEW horizontal buffer
+  -  *<Ctrl+w>c* - CLOSE current buffer
+  -  *<Ctrl+w>v* - NEW vertical buffer
+  -  *<Ctrl+w>s* - split current buffer
+  -  *<Ctrl+w>p* - move cursor to previous window
+  -  *<Ctrl+w>j* or *k* or *l* or *j* - navigate beetwew window
+  -  *<Ctrl+w>=* or *'-'* or *'+'* - equal size window, decrease increase size
   -  *ctrl + w*, *<* or *>* -  decrease or increse vertical split 
   -  *:ls*  - list all buffers, first column ID buffer
   -  *:buf* or *:b* #ID - reopen buffer
@@ -142,8 +142,8 @@
 
 ###Hot tip
 
-  -  *<C-w>r* - *<C-w>* - rotate window
-  -  *<C-w>L* - change position split horizontal to vertical, vertical to horizontal
+  -  *<Ctrl+w>r* - *<Ctrl+w>* - rotate window
+  -  *<Ctrl+w>L* - change position split horizontal to vertical, vertical to horizontal
 
 
 ## navigation and listing files
@@ -171,8 +171,8 @@
 ### Hot tip
 
   -  *gf* - open file under cursor same window
-  -  *<C-w>f* - open file under cursor split horizontal
-  -  *<C-w>f<C-w>L* - open file, split horizontal, move split to vertical
+  -  *<Ctrl+w>f* - open file under cursor split horizontal
+  -  *<Ctrl+w>f<Ctrl+w>L* - open file, split horizontal, move split to vertical
 
 
 ## Recording and playback bundle of commands, this is a powerful friend
