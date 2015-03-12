@@ -30,7 +30,7 @@ Bundle 'scrooloose/nerdtree'
 
 "for programers
 if executable('ctags')
-	Bundle 'majutsushi/tagbar'
+  Bundle 'majutsushi/tagbar'
 endif
 Bundle 'godlygeek/tabular'
 Bundle 'scrooloose/syntastic'
@@ -50,7 +50,11 @@ Bundle 'flazz/vim-colorschemes'
 
 
 " Color Themes
-colorscheme Monokai
+"colorscheme Monokai
+"set background=dark
+"colorscheme solarized
+"let g:solarized_termcolors=256
+
 
 """"""""
 if has('autocmd')
@@ -58,6 +62,7 @@ if has('autocmd')
 endif
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
+  au BufNewFile,BufRead *.tag set filetype=javascript
 endif
 
 " Use :help 'option' to see the documentation for the given option.
@@ -148,7 +153,7 @@ let g:airline_powerline_fonts = 1
 
 " Find
 map <C-f> /
-map <Space> /
+map <Space> :nohlsearch<CR>/
 
 " indend / deindent after selecting the text with (⇧ v), (.) to repeat.
 vnoremap <Tab> >
