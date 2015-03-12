@@ -181,9 +181,9 @@ nnoremap <C-k>  :tabclose<CR>
 inoremap <C-k>  <Esc>:tabclose<CR>i
 
 " lazy ':'
-map \ :
+map , :
 
-let mapleader = ','
+let mapleader = '\'
 nnoremap <Leader>p :set paste<CR>
 nnoremap <Leader>o :set nopaste<CR>
 noremap  <Leader>g :GitGutterToggle<CR>
