@@ -211,3 +211,21 @@
   - *:echo @%*
 
 
+# Install
+
+To install you need three steps:
+- clone this repository
+- create .vim links
+- install plugins
+
+
+  cd ~/
+  #clone this repository
+  git clone https://github.com/stvkoch/powerVim.git .powerVim
+  #create .vim links
+  ln -s ~/.vim ~/.powerVim
+  ln -s ~/.vimrc ~/.powerVim/vimrc
+  #install plugins
+  vim +:PluginInstall
+
+If you have same personal configuration create ~/.vimrc.local and set there what you need
