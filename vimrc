@@ -1,4 +1,5 @@
-
+" http://www.ibm.com/developerworks/views/linux/libraryview.jsp?end_no=100&lcl_sort_order=asc&type_by=Articles&sort_order=desc&show_all=false&start_no=1&sort_by=Title&search_by=scripting+the+vim+editor&topic_by=All+topics+and+related+products&search_flag=true&show_abstract=true
+"
 set nocompatible
 filetype off
 
@@ -11,19 +12,40 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'gcmt/breeze.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'SirVer/ultisnips'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'bling/vim-airline'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'Shougo/neocomplcache'
 Bundle 'sheerun/vim-polyglot'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'Lokaltog/vim-easymotion'
+
+
+Bundle 'reedes/vim-textobj-quote'
+Bundle 'reedes/vim-litecorrect'
+Bundle 'reedes/vim-textobj-sentence'
+
+
+Bundle 'scrooloose/nerdtree'
+
+
+"for programers
+if executable('ctags')
+	Bundle 'majutsushi/tagbar'
+endif
+Bundle 'godlygeek/tabular'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-fugitive'
+Bundle 'mattn/webapi-vim'
+
+"Snippers and Autocomplete
+Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'functionList.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
+Bundle 'honza/vim-snippets'
 
+
+
+" colors and themes
 Bundle 'flazz/vim-colorschemes'
 
 
@@ -126,6 +148,8 @@ let g:airline_powerline_fonts = 1
 
 " Find
 map <C-f> /
+map <Space> /
+
 " indend / deindent after selecting the text with (⇧ v), (.) to repeat.
 vnoremap <Tab> >
 vnoremap <S-Tab> <
@@ -222,4 +246,7 @@ if has('conceal')
 endif
 
 
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
+let g:tagbar_width=26                          " Default is 40, seems too wide
+noremap <silent> <Leader>y :TagbarToggle
 
