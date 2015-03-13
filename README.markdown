@@ -213,19 +213,22 @@
 
 # Install
 
-To install you need three steps:
+You need three steps to install this configuration:
+
 - clone this repository
-- create .vim links
+- create a .vim links
 - install plugins
 
 
-  cd ~/
-  #clone this repository
-  git clone https://github.com/stvkoch/powerVim.git .powerVim
-  #create .vim links
-  ln -s ~/.vim ~/.powerVim
-  ln -s ~/.vimrc ~/.powerVim/vimrc
-  #install plugins
-  vim +:PluginInstall
+    cd ~/
+    //clone this repository
+    git clone https://github.com/stvkoch/powerVim.git .powerVim
+    //create .vim links
+    ln -s ~/.vim ~/.powerVim
+    ln -s ~/.vimrc ~/.powerVim/vimrc
+    //install plugins
+    vim +:PluginInstall
 
-If you have same personal configuration create ~/.vimrc.local and set there what you need
+
+
+If you have same personal configuration, you can create ~/.vimrc.local and put what you need there.
