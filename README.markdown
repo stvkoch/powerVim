@@ -220,6 +220,7 @@ You need three steps to install this configuration:
 - install plugins
 
 
+
     cd ~/
     //clone this repository
     git clone https://github.com/stvkoch/powerVim.git .powerVim
@@ -227,7 +228,8 @@ You need three steps to install this configuration:
     ln -s ~/.vim ~/.powerVim
     ln -s ~/.vimrc ~/.powerVim/vimrc
     //install plugins
-    vim +:PluginInstall
+    vim +:PluginInstall +:qa
+
 
 
 
