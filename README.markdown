@@ -234,3 +234,17 @@ Do it:
 
 
 If you have same personal configuration, you can create ~/.vimrc.local and put what you need there.
+
+
+# Troubleshooting
+
+
+#### Tagbar error:
+
+	- see in .vimrc the path of ctags configurated like 'let g:tagbar_ctag_bin...'
+
+	
+#### Vundle not installed:
+
+	- run: git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+
