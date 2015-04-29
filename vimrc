@@ -124,13 +124,6 @@ set completeopt=menuone,longest,preview
 
 
 
-" Mappings
-
-" Use <C-L> to clear the highlighting of :set hlsearch.
-if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
-endi
-
 
 
 "
@@ -161,10 +154,15 @@ let g:neocomplcache_enable_at_startup = 1
 
 
 
-"
-" Basic shortcuts definitions
-"  most in visual mode / selection (v or ‚áß v)
-"
+
+
+
+" Mappings
+
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endi
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
