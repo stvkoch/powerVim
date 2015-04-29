@@ -98,6 +98,7 @@
 
 ### Hot tip
 
+  -  *\zi* - set foldmethod=indent
   -  *v* select text and *zf* - create fold from select text
 
 
