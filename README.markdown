@@ -219,6 +219,8 @@
 
   - *,,* - set paste
   - *<leader>hw* - highlight word from under cursor
+  - *<SPACE>* - search on filea
+  - *:Ack ....* - search PATTERN in files from current directory and subdirectories, with possibilite open file
 
 
 # Install
