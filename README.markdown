@@ -19,7 +19,7 @@
   -  *:{NUMBERLINE}* - goto line, *gg* - begin file, *G* - end file
   -  *:r filename* - insert content of filename starting in cursor
 
-  - leader is \
+  - lead is \
 
 
 ## move definition, you use this keys when you need moviments too
