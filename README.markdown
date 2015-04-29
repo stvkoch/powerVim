@@ -134,12 +134,15 @@
   -  *<Ctrl+w>p* - move cursor to previous window
   -  *<Ctrl+w>j* or *k* or *l* or *j* - navigate beetwew window
   -  *<Ctrl+w>=* or *'-'* or *'+'* - equal size window, decrease increase size
-  -  *ctrl + w*, *<* or *>* -  decrease or increse vertical split 
+  -  *ctrl + w* + *<* or *>* -  decrease or increse vertical split 
   -  *:ls*  - list all buffers, first column ID buffer
   -  *:buf* or *:b* #ID - reopen buffer
   -  *:bnext*, *:bprevious*, *:bfirst*, *:blast* - navigate between buffers
   -  *:bdelete #ID* - delete buffer
-
+  -  <leader>b - list buffers
+  -  <leader>bn - next buffer
+  -  <leader>bp - previous buffer
+ 
 ###Hot tip
 
   -  *<Ctrl+w>r* - *<Ctrl+w>* - rotate window
@@ -195,6 +198,7 @@
   -  *ctrl+f* map to */*
 
 
+
 ### move line to up and down
 
   -  ctrl+u - up
@@ -209,6 +213,12 @@
 ### print path current opened file
 
   - *:echo @%*
+  - 
+
+### Usefuls Miscellaneous
+
+  - *,,* - set paste
+  - *<leader>hw* - highlight word from under cursor
 
 
 # Install
