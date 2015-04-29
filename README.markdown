@@ -19,6 +19,7 @@
   -  *:{NUMBERLINE}* - goto line, *gg* - begin file, *G* - end file
   -  *:r filename* - insert content of filename starting in cursor
 
+  - leader is \
 
 
 ## move definition, you use this keys when you need moviments too
@@ -139,9 +140,9 @@
   -  *:buf* or *:b* #ID - reopen buffer
   -  *:bnext*, *:bprevious*, *:bfirst*, *:blast* - navigate between buffers
   -  *:bdelete #ID* - delete buffer
-  -  <leader>b - list buffers
-  -  <leader>bn - next buffer
-  -  <leader>bp - previous buffer
+  -  \b - list buffers
+  -  \bn - next buffer
+  -  \bp - previous buffer
  
 ###Hot tip
 
@@ -218,7 +219,7 @@
 ### Usefuls Miscellaneous
 
   - *,,* - set paste
-  - *<leader>hw* - highlight word from under cursor
+  - *\hw* - highlight word from under cursor
   - *<SPACE>* - search on filea
   - *:Ack ....* - search PATTERN in files from current directory and subdirectories, with possibilite open file
 
@@ -234,14 +235,14 @@ You need three steps to install this configuration:
 Do it:
 
 
-	cd ~/
-	//clone this repository
-	git clone https://github.com/stvkoch/powerVim.git .powerVim --recursive
-	//create .vim links
-	ln -s ~/.vim ~/.powerVim
-	ln -s ~/.vimrc ~/.powerVim/vimrc
-	//install plugins
-	vim +:PluginInstall +:qa
+    cd ~/
+    //clone this repository
+    git clone https://github.com/stvkoch/powerVim.git .powerVim --recursive
+    //create .vim links
+    ln -s ~/.vim ~/.powerVim
+    ln -s ~/.vimrc ~/.powerVim/vimrc
+    //install plugins
+    vim +:PluginInstall +:qa
 
 
 
@@ -253,10 +254,10 @@ If you have same personal configuration, you can create ~/.vimrc.local and put w
 
 #### Tagbar error:
 
-	- see in .vimrc the path of ctags configurated like 'let g:tagbar_ctag_bin...'
+    - see in .vimrc the path of ctags configurated like 'let g:tagbar_ctag_bin...'
 
-	
+    
 #### Vundle not installed:
 
-	- run: git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+    - run: git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 
