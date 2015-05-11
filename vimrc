@@ -308,3 +308,9 @@ set colorcolumn=80
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+
+" for project
+if filereadable(expand(".vimrc.local"))
+  source .vimrc.local
+endif
