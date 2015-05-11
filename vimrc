@@ -298,6 +298,9 @@ endfunction
 
 nnoremap <leader>hw :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
 
+" Column color
+highlight ColorColumn ctermbg=DarkGrey "set to whatever you like
+set colorcolumn=80
 
 
 
