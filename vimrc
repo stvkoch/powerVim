@@ -9,7 +9,7 @@ filetype plugin on
 
 " vundle plugin manager
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#rc()ne
 Bundle 'gmarik/vundle'
 
 
@@ -31,6 +31,8 @@ Bundle 'reedes/vim-textobj-quote'
 Bundle 'reedes/vim-litecorrect'
 Bundle 'reedes/vim-textobj-sentence'
 Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+
 
 
 " bundles for programers
@@ -150,6 +152,7 @@ let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
 let g:tagbar_width=26                          " Default is 40, seems too wide
 let g:neocomplcache_enable_at_startup = 1
 
+let g:nerdtree_tabs_open_on_console_startup=1
 
 
 
