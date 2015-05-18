@@ -88,24 +88,7 @@ Bundle 'honza/vim-snippets'
 if executable('ctags')
   Bundle 'majutsushi/tagbar'
 endif
-" Bundle 'bling/vim-airline'
-" Bundle 'tpope/vim-surround'
-" Bundle 'gcmt/breeze.vim'
-" Bundle 'tomtom/tcomment_vim'
-" Bundle 'airblade/vim-gitgutter'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'reedes/vim-textobj-quote'
-" Bundle 'reedes/vim-litecorrect'
-" Bundle 'reedes/vim-textobj-sentence'
-" Bundle 'godlygeek/tabular'
-" Bundle 'scrooloose/syntastic'
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'mattn/webapi-vim'
-" Snippers and Autocomplete
-" Bundle 'Shougo/neocomplcache'
-" Bundle 'Shougo/neosnippet'
-" Bundle 'Shougo/neosnippet-snippets'
-" Bundle 'flazz/vim-colorschemes'
+Bundle 'bling/vim-airline'
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
