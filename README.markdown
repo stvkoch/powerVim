@@ -250,9 +250,9 @@ In your project you can create ..project-root-folder/.vimrc.local and put there 
 
 
 
-  set path=..project-root-folder/especial-path
-  au BufNewFile,BufRead *.tag set filetype=javascript
-  ...
+    set path=..project-root-folder/especial-path
+    au BufNewFile,BufRead *.tag set filetype=javascript
+    ...
 
 
 
