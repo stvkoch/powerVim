@@ -237,12 +237,12 @@ Do it:
 
 
     cd ~/
-    //clone this repository
+    #clone this repository
     git clone https://github.com/stvkoch/powerVim.git .powerVim --recursive
-    //create .vim links
+    #create .vim links
     ln -s ~/.powerVim  ~/.vim
     ln -s ~/.powerVim/vimrc ~/.vimrc
-    //install plugins
+    #install plugins - ignore initial plugins missing errors
     vim +:PluginInstall +:qa
 
 
