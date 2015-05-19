@@ -240,8 +240,8 @@ Do it:
     //clone this repository
     git clone https://github.com/stvkoch/powerVim.git .powerVim --recursive
     //create .vim links
-    ln -s ~/.vim ~/.powerVim
-    ln -s ~/.vimrc ~/.powerVim/vimrc
+    ln -s ~/.powerVim  ~/.vim
+    ln -s ~/.powerVim/vimrc ~/.vimrc
     //install plugins
     vim +:PluginInstall +:qa
 
