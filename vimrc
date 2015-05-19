@@ -172,11 +172,6 @@ endif
 " CtrlP
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/* 
 
-" Ultisnip
-let g:UltiSnipsExpandTrigger="<f1>"
-let g:UltiSnipsJumpForwardTrigger="<f1>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:did_UltiSnips_vim_after = 1
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -191,8 +186,6 @@ let g:tagbar_width=26                          " Default is 40, seems too wide
 noremap <silent> <Leader>y :TagbarToggle
 let g:nerdtree_tabs_open_on_console_startup=1
 
-" Disable tComment to escape some entities
-let g:tcomment#replacements_xml={}
 
 " Tabs
 let g:airline_theme='badwolf'
