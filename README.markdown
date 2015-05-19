@@ -89,9 +89,11 @@
 
 ## folding and unfolding
 
+  - *\fi* - enable indentation folding ! very useful
+  - *za* - open/close folding
+  - *zR* - open all folding
   -  *zf* - create folding
   -  *zfa}* - create folding around of }
-  -  *za* - toggle folding/unfolding open/close
   -  *zc* - close folding
   -  *zo* - open folding
   -  *zd* - delete folding
