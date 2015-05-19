@@ -249,6 +249,7 @@ If you have some personal configuration, you can create ~/.vimrc.local and put w
 In your project you can create ..project-root-folder/.vimrc.local and put there some useful stuffs like
 
 
+
   set path=..project-root-folder/especial-path
   au BufNewFile,BufRead *.tag set filetype=javascript
   ...
