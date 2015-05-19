@@ -117,8 +117,8 @@ function! AutoHighlightToggle()
   endif
 endfunction
 
-command formatJson :%!python -m json.tool
-command formatPerl :%!perltidy -q<CR>
+command FormatJson :%!python -m json.tool
+command FormatPerl :%!perltidy -q<CR>
 
 function! s:swap_lines(n1, n2)
     let line1 = getline(a:n1)
