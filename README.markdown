@@ -83,15 +83,17 @@
   -  *gU* - turn select text to upper case
   -  *gu* - turn select text to lower case
   -  *g~* - InverT case
-  -  // in same cases you can use only ~, U or u to combine when another keys, example: vawU (visual around word uppercase)
+  -  // in some cases you can use only ~, U or u to combine when another keys, example: vawU (visual around word uppercase)
 
 
 
 ## folding and unfolding
 
+  - *\fi* - enable indentation folding ! very useful
+  - *za* - open/close folding
+  - *zR* - open all folding
   -  *zf* - create folding
   -  *zfa}* - create folding around of }
-  -  *za* - toggle folding/unfolding open/close
   -  *zc* - close folding
   -  *zo* - open folding
   -  *zd* - delete folding
@@ -212,6 +214,11 @@
   - *:FormatJson* - equal to type  *:%!python -m json-tool*
 
 
+### format perl
+
+  - *:FormatPerl* - equal to type  *:%!perltody -q*
+
+
 ### print path current opened file
 
   - *:echo @%*
@@ -220,8 +227,8 @@
 ### Usefuls Miscellaneous
 
   - *,,* - set paste
-  - *\hw* - highlight word from under cursor
-  - *<SPACE>* - search on filea
+  - *\z* - highlight word from under cursor
+  - *<SPACE>* - search on file
   - *:Ack ....* - search PATTERN in files from current directory and subdirectories, with possibilite open file
 
 ### Open terminal on split windows
@@ -242,17 +249,23 @@ Do it:
 
 
     cd ~/
-    #clone this repository
     git clone https://github.com/stvkoch/powerVim.git .powerVim --recursive
-    #create .vim links
     ln -s ~/.powerVim  ~/.vim
     ln -s ~/.powerVim/vimrc ~/.vimrc
-    #install plugins - ignore initial plugins missing errors
     vim +:PluginInstall +:qa
 
 
 
-If you have same personal configuration, you can create ~/.vimrc.local and put what you need there.
+If you have some personal configuration, you can create ~/.vimrc.local and put what you need there.
+
+In your project you can create ..project-root-folder/.vimrc.local and put there some useful stuffs like
+
+
+
+    set path=..project-root-folder/especial-path
+    au BufNewFile,BufRead *.tag set filetype=javascript
+    ...
+
 
 
 # Troubleshooting
