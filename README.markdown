@@ -224,6 +224,11 @@
   - *<SPACE>* - search on filea
   - *:Ack ....* - search PATTERN in files from current directory and subdirectories, with possibilite open file
 
+### Open terminal on split windows
+
+  - first split your windows *C-w + s*
+  - next active conqueTerm inside of splited window with *C-x*
+
 
 # Install
 

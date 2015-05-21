@@ -60,8 +60,8 @@ endif
 " files types like:
 au BufNewFile,BufRead *.tag set filetype=javascript " tags is javascript files
 
-" 
-" vim configurations = = = = = = = = = = = = = = = = = = = = = = = = 
+"
+" vim configurations = = = = = = = = = = = = = = = = = = = = = = = =
 "
 
 
@@ -89,6 +89,7 @@ if executable('ctags')
   Bundle 'majutsushi/tagbar'
 endif
 Bundle 'bling/vim-airline'
+Bundle 'https://github.com/rosenfeld/conque-term'
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
