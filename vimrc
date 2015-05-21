@@ -90,6 +90,7 @@ if executable('ctags')
 endif
 Bundle 'bling/vim-airline'
 Bundle 'https://github.com/rosenfeld/conque-term'
+Bundle 'tpope/vim-commentary'
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
