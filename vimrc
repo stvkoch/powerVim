@@ -193,7 +193,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 "let g:neocomplcache_enable_at_startup = 1
 
 "
-" plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+" plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
 
 
@@ -201,7 +201,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 
 
 "
-" 5 - maps = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+" 5 - maps = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
@@ -219,9 +219,6 @@ vnoremap <S-Tab> <
 
 " comment / decomment & normal comment behavior
 vmap <C-m> gc
-
-" Text wrap simpler, then type the open tag or ',"
-vmap <C-w> S
 
 " Cut, Paste, Copy
 vmap <C-x> d
@@ -245,6 +242,7 @@ inoremap <C-k>  <Esc>:tabclose<CR>i
 " lazy ':'
 map , :
 
+" open buffer list
 map <leader>b :CtrlPBuffer<CR>
 
 " Don't use Ex mode, use Q for formatting
@@ -255,9 +253,11 @@ inoremap <C-c> <Esc>
 nnoremap <Leader>p :set paste<CR>
 map ,, :set paste<CR><ESC>i
 nnoremap <Leader>o :set nopaste<CR>
-noremap  <Leader>g :GitGutterToggle<CR>
 
+" highlight word under cursor
 nnoremap <leader>z :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+
+" move lines
 noremap <silent> <c-s-u> :call <SID>swap_up()<CR>
 noremap <silent> <c-s-d> :call <SID>swap_down()<CR>
 
@@ -274,9 +274,12 @@ xnoremap  '  s''<Esc>P<Right>
 xnoremap  "  s""<Esc>P<Right>
 xnoremap  `  s``<Esc>P<Right>
 
-
+" enable term in window
 map <C-x> :ConqueTerm bash<CR>
+
 map <C-a> :blast<CR>
+
+" \fi enable folding by indent
 map <leader>fi :set foldmethod=indent<CR>
 
 "
