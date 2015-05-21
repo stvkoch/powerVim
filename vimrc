@@ -177,6 +177,7 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme='badwolf'
 
 " NERDTree
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
@@ -186,10 +187,6 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 let g:tagbar_width=26                          " Default is 40, seems too wide
 noremap <silent> <Leader>y :TagbarToggle
 let g:nerdtree_tabs_open_on_console_startup=1
-
-
-" Tabs
-let g:airline_theme='badwolf'
 
 
 "let g:neocomplcache_enable_at_startup = 1
