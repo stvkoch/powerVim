@@ -256,14 +256,19 @@ Do it:
 
 
 
-If you have some personal configuration, you can create ~/.vimrc.local and put what you need there.
+If you have some personal configuration, you can create ~/.vimrc.local and put there what you need.
 
-In your project you can create ..project-root-folder/.vimrc.local and put there some useful stuffs like
+In your project you can create ..project-root-folder/.vimrc.local and add some useful stuffs like
 
 
 
-    set path=..project-root-folder/especial-path
+    set path=./lib
+    set path=./vendor
+    set path=./app/controller
+    set path=./app/model
+    set path=./app/view
     au BufNewFile,BufRead *.tag set filetype=javascript
+    au BufNewFile,BufRead *.jsx set filetype=html
     ...
 
 
