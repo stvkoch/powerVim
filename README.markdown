@@ -58,6 +58,7 @@
   -    *%s/../../c* - confirm each sustituitions
   -    *%s/../../g* - global
   -    *%s/../../i* - case insensive
+  -    *%s/../../gic* - case insensive global substituition with ask confirmation
 
 
 ## multi-line editing using macros, steps:
@@ -98,11 +99,6 @@
   -  *zo* - open folding
   -  *zd* - delete folding
 
-### Hot tip
-
-  -  *\zi* - set foldmethod=indent
-  -  *v* select text and *zf* - create fold from select text
-
 
 
 ## Multiple cursor plugin 
@@ -130,14 +126,14 @@
 
 ## SPLIT BUFFER == file open or new file
 
-  -  *<Ctrl+w>* - work with buffer
-  -  *<Ctrl+w>n* - NEW horizontal buffer
-  -  *<Ctrl+w>c* - CLOSE current buffer
-  -  *<Ctrl+w>v* - NEW vertical buffer
-  -  *<Ctrl+w>s* - split current buffer
-  -  *<Ctrl+w>p* - move cursor to previous window
-  -  *<Ctrl+w>j* or *k* or *l* or *j* - navigate beetwew window
-  -  *<Ctrl+w>=* or *'-'* or *'+'* - equal size window, decrease increase size
+  -  *Ctrl+w* - work with buffer
+  -  *Ctrl+w n* - NEW horizontal buffer
+  -  *Ctrl+w c* - CLOSE current buffer
+  -  *Ctrl+w v* - NEW vertical buffer
+  -  *Ctrl+w s* - split current buffer
+  -  *Ctrl+w p* - move cursor to previous window
+  -  *Ctrl+w j* or *k* or *l* or *j* - navigate beetwew window
+  -  *Ctrl+w =* or *'-'* or *'+'* - equal size window, decrease increase size
   -  *ctrl + w* + *<* or *>* -  decrease or increse vertical split 
   -  *:ls*  - list all buffers, first column ID buffer
   -  *:buf* or *:b* #ID - reopen buffer
@@ -146,40 +142,41 @@
   -  \b - list buffers
   -  \bn - next buffer
   -  \bp - previous buffer
- 
+
+
 ###Hot tip
 
-  -  *<Ctrl+w>r* - *<Ctrl+w>* - rotate window
-  -  *<Ctrl+w>L* - change position split horizontal to vertical, vertical to horizontal
+  -  *<Ctrl+w r* - *Ctrl+w* - rotate window
+  -  *Ctrl+w L* - change position split horizontal to vertical, vertical to horizontal
+  - *\b* select buffer and key *Ctrl+o* and choise where you wan open selected buffer
 
 
 ## navigation and listing files
 
-  -  *:e* . or *:e ../somewhere/path...*
-  -    *s* - click 's' to change sort of files
+  -  *:e .* - show list files
   -    - after find your file:
   -      *o* - split windows and show file
   -      *v* - split vertical and show file
   -      *t* - open file new tab (use tab navigation)
-  -  *R* - rename file directory under cursor
-  -  *D* - delete
+  -      *R* - rename file directory under cursor
+  -      *D* - delete
   -  *ctrl + p* - search file
   -    after search file you can: 
   -      *ctrl+i* open with horizontal split
   -      *ctrl+s* open vertical split
 
 
-  -  :e vim use with context the path where vim start running, you can manipulate de current path.
+  -  :e vim commando use a context the path where vim start running, you can manipulate de current path.
   -    *:pwd* - show current path
-  -    *:cd* "....." - change current path of current window
-  -    *:lcd* "...." - change current path all windows
+  -    *:cd "....."* - change current path of current window
+  -    *:lcd "...."* - change current path all windows
 
 
 ### Hot tip
 
-  -  *gf* - open file under cursor same window
-  -  *<Ctrl+w>f* - open file under cursor split horizontal
-  -  *<Ctrl+w>f<Ctrl+w>L* - open file, split horizontal, move split to vertical
+  -  *gf* - open file under cursor same window (see .vim.local instrutions for more details)
+  -  *Ctrl+w f* - open file under cursor split horizontal
+  -  *Ctrl+w f* or *Ctrl+w L* - open file, split horizontal, move split to vertical
 
 
 ## Recording and playback bundle of commands, this is a powerful friend
@@ -193,13 +190,12 @@
 
 ### CTRL+p - find files
 
-  -  ctrl+x - open selected file in new horizontal split
   -  ctrl+v - open selected file in new vertical split
   -  ctrl+t - open selected file in new tab
 
 
-  -  *\* map to *:*
-  -  *ctrl+f* map to */*
+  -  *\* -  map to *:*
+  -  *ctrl+f* - map to */*
 
 
 
@@ -228,12 +224,13 @@
 
   - *,,* - set paste
   - *\z* - highlight word from under cursor
-  - *<SPACE>* - search on file
+  - *SPACE* - search on file
   - *:Ack ....* - search PATTERN in files from current directory and subdirectories, with possibilite open file
 
-### Open terminal on split windows
 
-  - first split your windows *C-w + s*
+### Open terminal bash on current windows
+
+  - first split your windows *C-w + s* (if you want)
   - next active conqueTerm inside of splited window with *C-x*
 
 
@@ -280,7 +277,7 @@ In your project you can create ..project-root-folder/.vimrc.local and add some u
 
     - see in .vimrc the path of ctags configurated like 'let g:tagbar_ctag_bin...'
 
-    
+ 
 #### Vundle not installed:
 
     - run: git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
