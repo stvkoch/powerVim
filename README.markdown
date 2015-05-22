@@ -1,4 +1,4 @@
-# What you need know to turn in a power vim user
+# What you need know to turn you into a power vim user
 
 
 ## Basic editing and moviments
