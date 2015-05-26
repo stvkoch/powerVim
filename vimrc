@@ -91,6 +91,7 @@ endif
 Bundle 'bling/vim-airline'
 Bundle 'https://github.com/rosenfeld/conque-term'
 Bundle 'tpope/vim-commentary'
+Bundle 'mattn/emmet-vim'
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
