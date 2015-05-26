@@ -229,8 +229,6 @@ vmap <C-c> y
 " Undo, Redo (broken)
 nnoremap <C-z>  :undo<CR>
 inoremap <C-z>  <Esc>:undo<CR>
-nnoremap <C-y>  :redo<CR>
-inoremap <C-y>  <Esc>:redo<CR>
 
 nnoremap <C-h>  :tabprevious<CR>
 inoremap <C-h>  <Esc>:tabprevious<CR>i
