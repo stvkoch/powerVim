@@ -212,7 +212,7 @@
 
 ### format perl
 
-  - *:FormatPerl* - equal to type  *:%!perltody -q*
+  - *:FormatPerl* - equal to type  *:%!perltidy -q*
 
 
 ### print path current opened file
