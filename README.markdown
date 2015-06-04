@@ -151,6 +151,13 @@
   - *\b* select buffer and key *Ctrl+o* and choise where you wan open selected buffer
 
 
+###NerdTree - Hot tip
+
+  - add new file or directory via nerdTree
+    - press *m* 
+      - choise 'add a childnode' to add file or directory... follow instructions
+
+
 ## navigation and listing files
 
   -  *:e .* - show list files
