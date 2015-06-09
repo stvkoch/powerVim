@@ -178,8 +178,8 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme='badwolf'
+"let g:airline_powerline_fonts = 1
+"let g:airline_theme='wombat'
 
 " NERDTree
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
@@ -188,6 +188,7 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 "let g:tagbar_ctags_bin='/usr/local/bin/ctags' " Proper Ctags locations
 let g:tagbar_width=26                          " Default is 40, seems too wide
 noremap <silent> <Leader>y :TagbarToggle
+
 let g:nerdtree_tabs_open_on_console_startup=1
 
 
@@ -264,8 +265,6 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
-
-inoremap  ,  ,<Space>
 
 
 " autocomplete quotes (visual and select mode)
