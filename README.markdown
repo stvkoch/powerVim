@@ -63,20 +63,29 @@
 
 ## multi-line editing using macros, steps:
 
-  -  *qa* // start recurding into 'a' register
-  -  *j* // move down
-  -  *$* // move last char on line
-  -  *i* // insert mode
-  -  *odd* //
-  -  *esc* // back to command mode
-  -  *j* // move down
-  -  *4@a* // replay macro 4 times (if there are 8 more lines)
+  1.  *qa* // start recurding into 'a' register
+  2.  *j* // move down
+  3.  *$* // move last char on line
+  4.  *i* // insert mode
+  5.  *odd* //
+  6.  *esc* // back to command mode
+  7.  *j* // move down
+  8.  *4@a* // replay macro 4 times (if there are 8 more lines)
 
 
 ## visual select
 
   -  *v+w*, *v+$* - select word or select cursor to end line
   -  *shift+v* - select line
+
+
+## multi-line editing using VISUAL-BLOCK
+
+  1. *Ctrl+v* - enable viasul block select
+  2. *Shift+i* - insert mode
+  3. insert text...
+  4. *ESC* - propagate change 
+
 
 
 ## turn upper or lower case
@@ -91,8 +100,9 @@
 ## folding and unfolding
 
   - *\fi* - enable indentation folding ! very useful
-  - *za* - open/close folding
-  - *zR* - open all folding
+  - *za* - open/close (toggle)
+  - *zR* - open all
+  - *zM* - close all
   -  *zf* - create folding
   -  *zfa}* - create folding around of }
   -  *zc* - close folding
