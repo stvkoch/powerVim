@@ -216,8 +216,10 @@ map <C-f> /
 map <Space> :nohlsearch<CR>/
 
 " indend / deindent after selecting the text with (⇧ v), (.) to repeat.
-vnoremap <Tab> >
-vnoremap <S-Tab> <
+vnoremap > >gv 
+vnoremap < <gv
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 " comment / decomment & normal comment behavior
 vmap <C-m> gc
