@@ -78,6 +78,11 @@
   -  *v+w*, *v+$* - select word or select cursor to end line
   -  *shift+v* - select line
 
+## useful selections tricks
+
+  - *va{* - select around block
+  - *vap* - select around paragraph
+
 
 ## multi-line editing using VISUAL-BLOCK
 
