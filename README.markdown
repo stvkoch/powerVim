@@ -29,6 +29,10 @@
   -  *k* - top
   -  *l* - rigth
 
+  - *Tab+X+ENTER* - jump to next X lines
+  - *H* - move to top of screen
+  - *M* - movel middle of screen
+  - *L* - move botton of screen
 
 
 ## useful combinations and commands
