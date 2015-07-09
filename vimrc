@@ -7,13 +7,17 @@
 " 5 - maps
 " 6 - sources
 "
+"
+"
+" by Steven Koch
+"
 " = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 
 
 
-" 
-" 1- vim configurations = = = = = = = = = = = = = = = = = = = = = = = = 
+"
+" 1- vim configurations = = = = = = = = = = = = = = = = = = = = = = = =
 "
 set nocompatible
 filetype off
