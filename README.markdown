@@ -35,6 +35,14 @@
   - *L* - move botton of screen
 
 
+  - *z.* -  put the line with the cursor at the center
+  - *zt* -  put the line with the cursor at the top
+  - *zb* -  put the line with the cursor at the bottom of the screen
+
+
+  - *J* - remove break line and spaces on begin of line. Useful when remove excessive formatation
+
+
 ## useful combinations and commands
 
   -  *:.,Xd* - delete from current line to line X
@@ -82,6 +90,7 @@
   -  *v+w*, *v+$* - select word or select cursor to end line
   -  *shift+v* - select line
 
+
 ## useful selections tricks
 
   - *va{* - select around block
@@ -120,7 +129,7 @@
 
 
 
-## Multiple cursor plugin 
+## Multiple cursor plugin
 
   -  // ctrl+n "select how many words you need" after that click "v" and interage with "i" or "a", etc...
   -  *Ctrl + n* - select
