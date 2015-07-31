@@ -60,6 +60,8 @@ set colorcolumn=80
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
+set t_Co=256
+
 
 " files types like:
 au BufNewFile,BufRead *.tag set filetype=javascript " tags is javascript files
@@ -182,8 +184,9 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline_powerline_fonts = 1
-"let g:airline_theme='wombat'
+let g:airline#extensions#branch#enabled = 1
+let g:airline_theme             = 'molokai'
+let g:airline#extensions#syntastic#enabled = 1
 
 " NERDTree
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
