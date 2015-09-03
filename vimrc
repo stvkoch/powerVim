@@ -98,6 +98,7 @@ Bundle 'bling/vim-airline'
 Bundle 'https://github.com/rosenfeld/conque-term'
 Bundle 'tpope/vim-commentary'
 Bundle 'mattn/emmet-vim'
+Bundle 'fatih/vim-go'
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
@@ -193,8 +194,9 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " Tagbar
 "let g:tagbar_ctags_bin='/usr/local/bin/ctags' " Proper Ctags locations
-let g:tagbar_width=26                          " Default is 40, seems too wide
+let g:tagbar_width=20                          " Default is 40, seems too wide
 noremap <silent> <Leader>y :TagbarToggle
+call tagbar#OpenWindow('fcj')
 
 let g:nerdtree_tabs_open_on_console_startup=1
 
