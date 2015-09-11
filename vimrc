@@ -62,6 +62,7 @@ if has('syntax') && !exists('g:syntax_on')
 endif
 set t_Co=256
 
+let &path = getcwd() . '/**'
 
 " files types like:
 au BufNewFile,BufRead *.tag set filetype=javascript " tags is javascript files
@@ -99,6 +100,8 @@ Bundle 'https://github.com/rosenfeld/conque-term'
 Bundle 'tpope/vim-commentary'
 Bundle 'mattn/emmet-vim'
 Bundle 'fatih/vim-go'
+Bundle 'syntastic'
+Bundle 'supertab'
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
