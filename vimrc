@@ -102,6 +102,12 @@ Bundle 'mattn/emmet-vim'
 Bundle 'fatih/vim-go'
 Bundle 'syntastic'
 Bundle 'supertab'
+Bundle 'css-color'
+Bundle 'JulesWang/css.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'elzr/vim-json'
+Bundle 'cakebaker/scss-syntax.vim'
+
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
@@ -132,6 +138,7 @@ endfunction
 
 command FormatJson :%!python -m json.tool
 command FormatPerl :%!perltidy -q<CR>
+command ShowSpecialCharacteres :set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 function! s:swap_lines(n1, n2)
     let line1 = getline(a:n1)
@@ -157,6 +164,7 @@ function! s:swap_down()
     call s:swap_lines(n, n + 1)
     exec n + 1
 endfunction
+
 "
 " functions = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
