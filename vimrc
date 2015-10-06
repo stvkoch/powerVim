@@ -102,11 +102,18 @@ Bundle 'mattn/emmet-vim'
 Bundle 'fatih/vim-go'
 Bundle 'syntastic'
 Bundle 'supertab'
-Bundle 'css-color'
 Bundle 'JulesWang/css.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'joonty/vim-phpqa'
+Bundle 'joonty/vdebug.git'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Shougo/unite.vim'
+Bundle 'm2mdas/phpcomplete-extended'
+Bundle 'stephpy/vim-php-cs-fixer'
 
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
@@ -213,6 +220,24 @@ let g:nerdtree_tabs_open_on_console_startup=1
 
 
 "let g:neocomplcache_enable_at_startup = 1
+"
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+
+
+" php fixer
+" If php-cs-fixer is in $PATH, you don't need to define line below
+" let g:php_cs_fixer_path = "~/php-cs-fixer.phar" " define the path to the php-cs-fixer.phar
+let g:php_cs_fixer_level = "symfony"              " which level ?
+let g:php_cs_fixer_config = "default"             " configuration
+let g:php_cs_fixer_php_path = "php"               " Path to PHP
+" If you want to define specific fixers:
+"let g:php_cs_fixer_fixers_list = "linefeed,short_tag,indentation"
+let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
+let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
+
+let g:syntastic_php_checkers=['php', 'phpcs']
+let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
 
 "
 " plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = =
