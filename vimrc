@@ -114,6 +114,8 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite.vim'
 Bundle 'm2mdas/phpcomplete-extended'
 Bundle 'stephpy/vim-php-cs-fixer'
+Bundle 'OmmiComplete'
+Bundle 'YouCompleteMe'
 
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
