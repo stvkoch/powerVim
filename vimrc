@@ -38,7 +38,7 @@ set showcmd
 set wildmenu
 set autoread
 set encoding=utf-8
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=4 shiftwidth=4 expandtab
 set listchars=tab:▒░,trail:▓
 set list
 set number
@@ -105,15 +105,13 @@ Bundle 'supertab'
 Bundle 'JulesWang/css.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'tpope/vim-fugitive.git'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'joonty/vim-phpqa'
 Bundle 'joonty/vdebug.git'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite.vim'
 Bundle 'm2mdas/phpcomplete-extended'
-Bundle 'stephpy/vim-php-cs-fixer'
+Bundle 'YouCompleteMe'
+Bundle 'OmmiComplete'
 
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
@@ -199,6 +197,9 @@ endif
 
 " CtrlP
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/* 
+" g:ctrlp_root_markers
+" let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 2
 
 
 " vim-airline
@@ -215,31 +216,50 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 let g:tagbar_width=20                          " Default is 40, seems too wide
 noremap <silent> <Leader>y :TagbarToggle
 call tagbar#OpenWindow('fcj')
+let g:nerdtree_tabs_open_on_console_startup = 1
 
-let g:nerdtree_tabs_open_on_console_startup=1
+let NERDTreeWinSize = 20
 
 
 "let g:neocomplcache_enable_at_startup = 1
 "
-autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+" autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 
 
 " php fixer
 " If php-cs-fixer is in $PATH, you don't need to define line below
 " let g:php_cs_fixer_path = "~/php-cs-fixer.phar" " define the path to the php-cs-fixer.phar
-let g:php_cs_fixer_level = "symfony"              " which level ?
-let g:php_cs_fixer_config = "default"             " configuration
-let g:php_cs_fixer_php_path = "php"               " Path to PHP
-" If you want to define specific fixers:
-"let g:php_cs_fixer_fixers_list = "linefeed,short_tag,indentation"
-let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
-let g:php_cs_fixer_dry_run = 1                    " Call command with dry-run option
-let g:php_cs_fixer_verbose = 1                    " Return the output of command if 1, else an inline information.
+"let g:php_cs_fixer_level = "symfony"              " which level ?
+"let g:php_cs_fixer_config = "default"             " configuration
+"let g:php_cs_fixer_php_path = "php"               " Path to PHP
+"" If you want to define specific fixers:
+""let g:php_cs_fixer_fixers_list = "linefeed,short_tag,indentation"
+"let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+"let g:php_cs_fixer_dry_run = 1                    " Call command with dry-run option
+"let g:php_cs_fixer_verbose = 1                    " Return the output of command if 1, else an inline information.
 
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
+let g:syntastic_php_phpcs_args='--standard=~/.ruleset.xml -n'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 
-"
+
+set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
+let OmniCpp_GlobalScopeSearch   = 1
+let OmniCpp_DisplayMode         = 1
+let OmniCpp_ShowScopeInAbbr     = 0 "do not show namespace in pop-up
+let OmniCpp_ShowPrototypeInAbbr = 1 "show prototype in pop-up
+let OmniCpp_ShowAccess          = 1 "show access in pop-up
+let OmniCpp_SelectFirstItem     = 1 "select first item in pop-up
+set completeopt=menuone,menu,longest
+
+" au FileType php set omnifunc=phpcomplete#CompletePHP
+let php_sql_query=1
+let php_htmlInStrings=1
+
+let g:phpcomplete_relax_static_constraint = 1
+let g:phpcomplete_complete_for_unknown_classes = 1
+
 " plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
 
@@ -327,6 +347,10 @@ map <C-a> :blast<CR>
 " \fi enable folding by indent
 map <leader>fi :set foldmethod=indent<CR>
 
+
+let g:ctrlp_cmd='CtrlP :pwd'
+" map <leader>p :ctrlp :pwd<CR>
+
 "
 " maps = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
@@ -335,6 +359,7 @@ map <leader>fi :set foldmethod=indent<CR>
 "
 " 6 - sources = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
+
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
@@ -347,5 +372,4 @@ endif
 "
 " sources = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
-
 
