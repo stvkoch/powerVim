@@ -287,10 +287,26 @@ Do it:
     vim +:PluginInstall +:qa
 
 
+Install ctags indexer and turn your VIM a real PHP ide, navigate between class and function.
+CTRL+] open class file on cursor like phpStorm
+
+
+    cp ~/.vim/ctags ~/projects/rootProject/.ctags
+    touch ~/projects/rootProject/.vim.local
+    echo "set tags=.ctags/cache/index" >> ~/projects/rootProject/.vim.local
+
+    #create the /usr/bin/ide and add content~/projects/rootProject/.vim.local
+
+    #!/bin/bash
+    DIR="$( pwd )"
+    $DIR/.ctags/indexed.sh
+    vim .
+
+
 
 If you have some personal configuration, you can create ~/.vimrc.local and put there what you need.
 
-In your project you can create ..project-root-folder/.vimrc.local and add some useful stuffs like
+In your project you can create ...project-root-folder/.vimrc.local and add some useful stuffs like
 
 
 
