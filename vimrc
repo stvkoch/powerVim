@@ -369,6 +369,13 @@ if filereadable('.vimrc.local')
   source .vimrc.local
 endif
 
+if filereadable('.ctags/vimrc.ctag')
+  echo "Indexing ctags"
+  let output = system('./.ctags/indexed.sh')
+  source .ctags/vimrc.ctag
+endif
+
+
 "
 " sources = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
