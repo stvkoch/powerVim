@@ -1,5 +1,7 @@
 # What you need know to turn you into a power vim user
 
+End of this file you find how turn your VIM a real IDE, with navigatoin betwwen class and function.
+
 
 ## Basic editing and moviments
 
