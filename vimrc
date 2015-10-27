@@ -110,8 +110,8 @@ Bundle 'joonty/vdebug.git'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite.vim'
 Bundle 'm2mdas/phpcomplete-extended'
-Bundle 'YouCompleteMe'
-Bundle 'OmmiComplete'
+"Bundle 'YouCompleteMe'
+"Bundle 'OmmiComplete'
 
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
