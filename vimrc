@@ -112,9 +112,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'm2mdas/phpcomplete-extended'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'Shougo/neocomplete.vim'
-"Bundle 'neocomplete'
-"Bundle 'YouCompleteMe'
-"Bundle 'OmmiComplete'
+Bundle 'Yggdroot/indentLine'
 
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
@@ -232,8 +230,9 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#sources#tags#cache_limit_size = 5000000
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 
-
-"
+"indentLine
+let g:indentLine_enabled = 1
+let g:indentLine_color_term = 239
 
 
 " php fixer
