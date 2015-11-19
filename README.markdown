@@ -289,8 +289,23 @@ Do it:
     vim +:PluginInstall +:qa
 
 
+
+## Turn VIM real IDE
+
+You need support lua. You can check if your vim as support to lua run
+
+:echo has('lua')
+
+1 has support to lua, 0 no!
+
+See this if you want reinstall your vim with support to lua
+https://gist.github.com/stvkoch/622a123a91b9500187fc
+
+
+
 Install ctags indexer and turn your VIM a real PHP IDE, navigate between class and function.
 CTRL+] open class file on cursor like phpStorm
+For this you need a .ctags folder provide by powerVim.
 
 
     cd projects/youProjectFolder
@@ -300,6 +315,11 @@ CTRL+] open class file on cursor like phpStorm
 
 that's it! Run vim and allways index your code in ctags database
 
+Always you open your vim, he check if exists a .ctags/indexer and run that indexing all code via ctags feature.
+
+
+
+## Personal configuration
 
 
 If you have some personal configuration, you can create ~/.vimrc.local and put there what you need.

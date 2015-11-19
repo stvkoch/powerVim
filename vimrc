@@ -76,7 +76,7 @@ au BufNewFile,BufRead *.tag set filetype=javascript " tags is javascript files
 
 
 
-" 
+"
 " 2 - plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
 "vundle plugin manager
@@ -111,6 +111,8 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite.vim'
 Bundle 'm2mdas/phpcomplete-extended'
 Bundle 'junegunn/vim-easy-align'
+Bundle 'Shougo/neocomplete.vim'
+"Bundle 'neocomplete'
 "Bundle 'YouCompleteMe'
 "Bundle 'OmmiComplete'
 
@@ -222,9 +224,16 @@ let g:nerdtree_tabs_open_on_console_startup = 1
 let NERDTreeWinSize = 20
 
 
-"let g:neocomplcache_enable_at_startup = 1
+" PHP complete extended
+autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
+
+"Neo complete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#sources#tags#cache_limit_size = 5000000
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+
 "
-" autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 
 
 " php fixer
