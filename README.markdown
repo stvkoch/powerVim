@@ -265,6 +265,25 @@ End of this file you find how turn your VIM a real IDE, with navigatoin betwwen 
   - *:Ack ....* - search PATTERN in files from current directory and subdirectories, with possibilite open file
 
 
+### Align multi-line
+
+Example:
+
+    def superMethod()
+        superVar = "hello"
+        anotherSuperVar = "world"
+    end
+
+Select variables lines and digit:
+
+    :EasyAlign *=
+
+This align all '=' selected
+
+
+
+
+
 ### Open terminal bash on current windows
 
   - first split your windows *C-w + s* (if you want)
