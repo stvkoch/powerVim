@@ -85,6 +85,9 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " plugins
+Bundle 'runVimTests'
+Bundle 'foo.vim'
+Bundle 'tobyS/pdv'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'terryma/vim-multiple-cursors'
@@ -113,7 +116,7 @@ Bundle 'm2mdas/phpcomplete-extended'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'Yggdroot/indentLine'
-
+Bundle 'tpope/vim-fugitive'
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
@@ -121,7 +124,7 @@ Bundle 'Yggdroot/indentLine'
 
 
 "
-" 3 - functions = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+" 3 - functions = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
 function! AutoHighlightToggle()
   let @/ = ''
@@ -209,6 +212,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline_theme             = 'molokai'
 let g:airline#extensions#syntastic#enabled = 1
 
+
 " NERDTree
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
@@ -268,6 +272,9 @@ let php_htmlInStrings=1
 
 let g:phpcomplete_relax_static_constraint = 1
 let g:phpcomplete_complete_for_unknown_classes = 1
+
+
+
 
 " plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
@@ -368,7 +375,6 @@ let g:ctrlp_cmd='CtrlP :pwd'
 "
 " 6 - sources = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
-
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
