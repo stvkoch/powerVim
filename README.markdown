@@ -190,6 +190,8 @@ End of this file you find how turn your VIM a real IDE, with navigatoin betwwen 
 
 ## navigation and listing files
 
+### using
+
   -  *:e .* - show list files
   -    - after find your file:
   -      *o* - split windows and show file
@@ -197,16 +199,20 @@ End of this file you find how turn your VIM a real IDE, with navigatoin betwwen 
   -      *t* - open file new tab (use tab navigation)
   -      *R* - rename file directory under cursor
   -      *D* - delete
+
+### using CtrlP
+
   -  *ctrl + p* - search file
   -    after search file you can: 
-  -      *ctrl+i* open with horizontal split
-  -      *ctrl+s* open vertical split
+        *ctrl+i* open with horizontal split
+        *ctrl+s* open vertical split
 
+  -  *lead + p* - search file with word under cursor
 
   -  :e vim commando use a context the path where vim start running, you can manipulate de current path.
-  -    *:pwd* - show current path
-  -    *:cd "....."* - change current path of current window
-  -    *:lcd "...."* - change current path all windows
+        *:pwd* - show current path
+        *:cd "....."* - change current path of current window
+        *:lcd "...."* - change current path all windows
 
 
 ### Hot tip
