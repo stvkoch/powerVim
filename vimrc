@@ -117,6 +117,7 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'Yggdroot/indentLine'
 Bundle 'tpope/vim-fugitive'
+Bundle 'ivalkeen/vim-ctrlp-tjump'
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
@@ -325,15 +326,12 @@ inoremap <C-k>  <Esc>:tabclose<CR>i
 " lazy ':'
 map , :
 
-" open buffer list
-map <leader>b :CtrlPBuffer<CR>
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
 " exit insert mode
 inoremap <C-c> <Esc>
 
-nnoremap <Leader>p :set paste<CR>
 map ,, :set paste<CR><ESC>i
 nnoremap <Leader>o :set nopaste<CR>
 
@@ -364,8 +362,13 @@ map <C-a> :blast<CR>
 map <leader>fi :set foldmethod=indent<CR>
 
 
-let g:ctrlp_cmd='CtrlP :pwd'
 " map <leader>p :ctrlp :pwd<CR>
+let g:ctrlp_cmd='CtrlP :pwd'
+nnoremap <leader>p :CtrlPtjump<cr>
+vnoremap <leader>p :CtrlPtjumpVisual<cr>
+" open buffer list
+map <leader>b :CtrlPBuffer<CR>
+
 
 "
 " maps = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
