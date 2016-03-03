@@ -112,9 +112,10 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'joonty/vdebug.git'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite.vim'
-Bundle 'm2mdas/phpcomplete-extended'
+"Bundle 'm2mdas/phpcomplete-extended'
 Bundle 'junegunn/vim-easy-align'
-Bundle 'Shougo/neocomplete.vim'
+"Bundle 'Shougo/neocomplete.vim'
+Bundle 'AutoComplPop'
 Bundle 'Yggdroot/indentLine'
 Bundle 'tpope/vim-fugitive'
 Bundle 'ivalkeen/vim-ctrlp-tjump'
@@ -231,9 +232,42 @@ let NERDTreeWinSize = 20
 autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
 
 "Neo complete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#sources#tags#cache_limit_size = 5000000
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+"let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#sources#tags#cache_limit_size = 5000000
+"let g:neocomplete#enable_smart_case = 1
+"let g:neocomplete#sources#syntax#min_keyword_length = 3
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"inoremap <expr><C-g>     neocomplete#undo_completion()
+"inoremap <expr><C-l>     neocomplete#complete_common_string()
+"function! s:my_cr_function()
+"  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+"endfunction
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"let php_sql_query=1
+"let php_htmlInStrings=1
+"if !exists('g:neocomplete#sources#omni#input_patterns')
+"  let g:neocomplete#sources#omni#input_patterns = {}
+"endif
+"let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+"set completeopt=longest,menuone
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+"  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+"
+"inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+"  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+
+
+
 
 "indentLine
 let g:indentLine_enabled = 1
@@ -356,7 +390,6 @@ xnoremap  `  s``<Esc>P<Right>
 " enable term in window
 map <C-x> :ConqueTerm bash<CR>
 
-map <C-a> :blast<CR>
 
 " \fi enable folding by indent
 map <leader>fi :set foldmethod=indent<CR>
@@ -364,8 +397,10 @@ map <leader>fi :set foldmethod=indent<CR>
 
 " map <leader>p :ctrlp :pwd<CR>
 let g:ctrlp_cmd='CtrlP :pwd'
-nnoremap <leader>p :CtrlPtjump<cr>
-vnoremap <leader>p :CtrlPtjumpVisual<cr>
+nnoremap <leader>w :CtrlPtjump<cr>
+vnoremap <leader>w :CtrlPtjumpVisual<cr>
+nmap <leader>p :CtrlP<CR><C-\>w
+"vmap <leader>p :CtrlP<CR><C-\>c
 " open buffer list
 map <leader>b :CtrlPBuffer<CR>
 

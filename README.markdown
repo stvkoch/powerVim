@@ -208,6 +208,7 @@ End of this file you find how turn your VIM a real IDE, with navigatoin betwwen 
         *ctrl+s* open vertical split
 
   -  *lead + p* - search file with word under cursor
+  -  *lead + w* - search by function on ctags index
 
   -  :e vim commando use a context the path where vim start running, you can manipulate de current path.
         *:pwd* - show current path
