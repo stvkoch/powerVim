@@ -265,6 +265,8 @@ autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
 "inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 "  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+let g:acp_enableAtStartup = 1
+let g:acp_behaviorKeywordLength = 1
 
 
 
