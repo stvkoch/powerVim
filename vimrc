@@ -107,6 +107,7 @@ Bundle 'syntastic'
 Bundle 'supertab'
 Bundle 'JulesWang/css.vim'
 Bundle 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Bundle 'elzr/vim-json'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'joonty/vdebug.git'
@@ -119,6 +120,15 @@ Bundle 'AutoComplPop'
 Bundle 'Yggdroot/indentLine'
 Bundle 'tpope/vim-fugitive'
 Bundle 'ivalkeen/vim-ctrlp-tjump'
+
+" vim-react-snippets:
+Bundle "justinj/vim-react-snippets"
+" " SnipMate and its dependencies:
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle 'arnaud-lb/vim-php-namespace'
+
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
@@ -311,7 +321,18 @@ let g:phpcomplete_relax_static_constraint = 1
 let g:phpcomplete_complete_for_unknown_classes = 1
 
 
-
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 
 " plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
@@ -332,6 +353,8 @@ endif
 " Find
 map <C-f> /
 map <Space> :nohlsearch<CR>/
+vnoremap <C-r> "hy:%s/<C-r>h//gci<left><left><left><left>
+
 
 " indend / deindent after selecting the text with (⇧ v), (.) to repeat.
 vnoremap > >gv 
