@@ -1,4 +1,4 @@
-" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+ " = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
 " 1 - vim configurations
 " 2 - plugins
@@ -234,7 +234,7 @@ let g:airline#extensions#syntastic#enabled = 1
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " Tagbar
-"let g:tagbar_ctags_bin='/usr/local/bin/ctags' " Proper Ctags locations
+let g:tagbar_ctags_bin='~/bin/ctags' " Proper Ctags locations
 let g:tagbar_width=20                          " Default is 40, seems too wide
 noremap <silent> <Leader>y :TagbarToggle
 call tagbar#OpenWindow('fcj')
