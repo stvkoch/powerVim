@@ -198,10 +198,15 @@ endfunction
 " 4 - plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
 
+"set term=xterm-256color
+"set t_Co=256
+"set background=light
+"colorscheme default
+let g:solarized_termcolors=256
+set background=dark
 "colorscheme Monokai
-"set background=dark
-"colorscheme solarized
-"let g:solarized_termcolors=256
+"colorscheme lucario
+colorscheme solarized
 
 
 if has('autocmd')
