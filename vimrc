@@ -128,6 +128,15 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle 'arnaud-lb/vim-php-namespace'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'https://github.com/gorodinskiy/vim-coloresque.git'
+"Bundle 'https://github.com/xolox/vim-easytags.git'
+"Bundle 'vim-misc'
+"Bundle 'craigemery/vim-autotag'
+
+
+
+
 
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
@@ -339,6 +348,16 @@ endfunction
 autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 
+
+
+let g:go_highlight_functions         = 1
+let g:go_highlight_methods           = 1
+let g:go_highlight_fields            = 1
+let g:go_highlight_types             = 1
+let g:go_highlight_operators         = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command                 = "goimports"
+
 " plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
 
@@ -362,7 +381,7 @@ vnoremap <C-r> "hy:%s/<C-r>h//gci<left><left><left><left>
 
 
 " indend / deindent after selecting the text with (⇧ v), (.) to repeat.
-vnoremap > >gv 
+vnoremap > >gv
 vnoremap < <gv
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
@@ -452,9 +471,12 @@ if filereadable('.vimrc.local')
   source .vimrc.local
 endif
 
-if filereadable('.ctags/vimrc.ctag')
+if filereadable('./.ctags/indexed.sh')
   echo "Indexing ctags"
   let output = system('./.ctags/indexed.sh')
+endif
+
+if filereadable('.ctags/vimrc.ctag')
   source .ctags/vimrc.ctag
 endif
 
