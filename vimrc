@@ -292,9 +292,6 @@ autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
 let g:acp_enableAtStartup = 1
 let g:acp_behaviorKeywordLength = 1
 
-
-
-
 "indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_color_term = 239
@@ -317,6 +314,21 @@ let g:syntastic_php_phpcs_args='--standard=~/.ruleset.xml -n'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint'
+
+"//set statusline+=%#warningmsg#
+"//set statusline+=%{SyntasticStatuslineFlag()}
+"//set statusline+=%*
+"//let g:syntastic_always_populate_loc_list = 1
+"//let g:syntastic_auto_loc_list = 1
+"//let g:syntastic_check_on_open = 1
+"//let g:syntastic_check_on_wq = 0
+"//let g:syntastic_javascript_checkers = ['eslint']
+"//let g:syntastic_javascript_eslint = 1
+"//let g:syntastic_mode_map = { 'mode': 'active',
+"//                            \ 'active_filetypes': ['php', 'javascript'],
+"//                            \ 'passive_filetypes': [] }
 
 set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
 let OmniCpp_GlobalScopeSearch   = 1
