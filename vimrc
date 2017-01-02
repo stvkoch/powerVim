@@ -370,6 +370,10 @@ let g:go_highlight_operators         = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command                 = "goimports"
 
+
+
+let g:javascript_plugin_jsdoc = 1
+
 " plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
 
@@ -465,6 +469,8 @@ nmap <leader>p :CtrlP<CR><C-\>w
 " open buffer list
 map <leader>b :CtrlPBuffer<CR>
 
+"set iskeyword=65-90,95,97-122,48-57
+map <leader>k :set iskeyword=65-90,95,97-122,48-57<CR>
 
 "
 " maps = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
@@ -496,4 +502,3 @@ endif
 "
 " sources = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
-
