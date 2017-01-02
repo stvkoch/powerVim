@@ -1,4 +1,4 @@
-" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+ " = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
 " 1 - vim configurations
 " 2 - plugins
@@ -107,6 +107,7 @@ Bundle 'syntastic'
 Bundle 'supertab'
 Bundle 'JulesWang/css.vim'
 Bundle 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Bundle 'elzr/vim-json'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'joonty/vdebug.git'
@@ -119,6 +120,24 @@ Bundle 'AutoComplPop'
 Bundle 'Yggdroot/indentLine'
 Bundle 'tpope/vim-fugitive'
 Bundle 'ivalkeen/vim-ctrlp-tjump'
+
+" vim-react-snippets:
+Bundle "justinj/vim-react-snippets"
+" " SnipMate and its dependencies:
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle 'arnaud-lb/vim-php-namespace'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'https://github.com/gorodinskiy/vim-coloresque.git'
+"Bundle 'https://github.com/xolox/vim-easytags.git'
+"Bundle 'vim-misc'
+"Bundle 'craigemery/vim-autotag'
+
+
+
+
+
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
@@ -188,10 +207,15 @@ endfunction
 " 4 - plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
 
+"set term=xterm-256color
+"set t_Co=256
+"set background=light
+"colorscheme default
+let g:solarized_termcolors=256
+set background=dark
 "colorscheme Monokai
-"set background=dark
-"colorscheme solarized
-"let g:solarized_termcolors=256
+"colorscheme lucario
+colorscheme solarized
 
 
 if has('autocmd')
@@ -219,7 +243,7 @@ let g:airline#extensions#syntastic#enabled = 1
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " Tagbar
-"let g:tagbar_ctags_bin='/usr/local/bin/ctags' " Proper Ctags locations
+let g:tagbar_ctags_bin='~/bin/ctags' " Proper Ctags locations
 let g:tagbar_width=20                          " Default is 40, seems too wide
 noremap <silent> <Leader>y :TagbarToggle
 call tagbar#OpenWindow('fcj')
@@ -265,9 +289,8 @@ autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
 "inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 "  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
-
-
-
+let g:acp_enableAtStartup = 1
+let g:acp_behaviorKeywordLength = 1
 
 "indentLine
 let g:indentLine_enabled = 1
@@ -291,6 +314,21 @@ let g:syntastic_php_phpcs_args='--standard=~/.ruleset.xml -n'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint'
+
+"//set statusline+=%#warningmsg#
+"//set statusline+=%{SyntasticStatuslineFlag()}
+"//set statusline+=%*
+"//let g:syntastic_always_populate_loc_list = 1
+"//let g:syntastic_auto_loc_list = 1
+"//let g:syntastic_check_on_open = 1
+"//let g:syntastic_check_on_wq = 0
+"//let g:syntastic_javascript_checkers = ['eslint']
+"//let g:syntastic_javascript_eslint = 1
+"//let g:syntastic_mode_map = { 'mode': 'active',
+"//                            \ 'active_filetypes': ['php', 'javascript'],
+"//                            \ 'passive_filetypes': [] }
 
 set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
 let OmniCpp_GlobalScopeSearch   = 1
@@ -309,7 +347,32 @@ let g:phpcomplete_relax_static_constraint = 1
 let g:phpcomplete_complete_for_unknown_classes = 1
 
 
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 
+
+
+let g:go_highlight_functions         = 1
+let g:go_highlight_methods           = 1
+let g:go_highlight_fields            = 1
+let g:go_highlight_types             = 1
+let g:go_highlight_operators         = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command                 = "goimports"
+
+
+
+let g:javascript_plugin_jsdoc = 1
 
 " plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
@@ -330,9 +393,11 @@ endif
 " Find
 map <C-f> /
 map <Space> :nohlsearch<CR>/
+vnoremap <C-r> "hy:%s/<C-r>h//gci<left><left><left><left>
+
 
 " indend / deindent after selecting the text with (⇧ v), (.) to repeat.
-vnoremap > >gv 
+vnoremap > >gv
 vnoremap < <gv
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
@@ -404,6 +469,8 @@ nmap <leader>p :CtrlP<CR><C-\>w
 " open buffer list
 map <leader>b :CtrlPBuffer<CR>
 
+"set iskeyword=65-90,95,97-122,48-57
+map <leader>k :set iskeyword=65-90,95,97-122,48-57<CR>
 
 "
 " maps = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
@@ -422,9 +489,12 @@ if filereadable('.vimrc.local')
   source .vimrc.local
 endif
 
-if filereadable('.ctags/vimrc.ctag')
+if filereadable('./.ctags/indexed.sh')
   echo "Indexing ctags"
   let output = system('./.ctags/indexed.sh')
+endif
+
+if filereadable('.ctags/vimrc.ctag')
   source .ctags/vimrc.ctag
 endif
 
@@ -432,4 +502,3 @@ endif
 "
 " sources = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
-
