@@ -37,6 +37,7 @@ End of this file you find how turn your VIM a real IDE, with navigatoin betwwen 
   - *L* - move botton of screen
 
 
+
   - *z.* -  put the line with the cursor at the center
   - *zt* -  put the line with the cursor at the top
   - *zb* -  put the line with the cursor at the bottom of the screen
