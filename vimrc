@@ -1,3 +1,4 @@
+echo "powerVim"
  " = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
 " 1 - vim configurations
@@ -58,7 +59,7 @@ let mapleader = '\'
 highlight ColorColumn ctermbg=DarkGrey
 set colorcolumn=80
 if has('syntax') && !exists('g:syntax_on')
-  syntax enable
+  syntax on
 endif
 set t_Co=256
 
@@ -133,7 +134,8 @@ Bundle 'https://github.com/gorodinskiy/vim-coloresque.git'
 "Bundle 'https://github.com/xolox/vim-easytags.git'
 "Bundle 'vim-misc'
 "Bundle 'craigemery/vim-autotag'
-
+Bundle 'vim-airline/vim-airline-themes'
+Bundle 'ludovicchabant/vim-gutentags'
 
 
 
@@ -148,7 +150,7 @@ Bundle 'https://github.com/gorodinskiy/vim-coloresque.git'
 " 3 - functions = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
 function! AutoHighlightToggle()
-  let @/ = ''
+  let @/ = '#'
   if exists('#auto_highlight')
     au! auto_highlight
     augroup! auto_highlight
@@ -213,7 +215,7 @@ endfunction
 "colorscheme default
 let g:solarized_termcolors=256
 set background=dark
-"colorscheme Monokai
+" colorscheme Monokai
 "colorscheme lucario
 colorscheme solarized
 
@@ -243,7 +245,7 @@ let g:airline#extensions#syntastic#enabled = 1
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 " Tagbar
-let g:tagbar_ctags_bin='~/bin/ctags' " Proper Ctags locations
+let g:tagbar_ctags_bin='/usr/bin/ctags' " Proper Ctags locations
 let g:tagbar_width=20                          " Default is 40, seems too wide
 noremap <silent> <Leader>y :TagbarToggle
 call tagbar#OpenWindow('fcj')
@@ -374,6 +376,8 @@ let g:go_fmt_command                 = "goimports"
 
 let g:javascript_plugin_jsdoc = 1
 
+
+"
 " plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
 
@@ -489,13 +493,9 @@ if filereadable('.vimrc.local')
   source .vimrc.local
 endif
 
-if filereadable('./.ctags/indexed.sh')
-  echo "Indexing ctags"
-  let output = system('./.ctags/indexed.sh')
-endif
 
-if filereadable('.ctags/vimrc.ctag')
-  source .ctags/vimrc.ctag
+if filereadable('.ctag/vimrc.ctag')
+  source .ctag/vimrc.ctag
 endif
 
 

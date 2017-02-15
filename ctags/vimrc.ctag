@@ -1,1 +1,10 @@
+if filereadable('./.ctags/indexed.sh')
+  echo "Indexing ctags on powerVim"
+  let output = system('./.ctags/indexed.sh')
+endif
+
 set tags=.ctags/cache/index
+
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+
+
