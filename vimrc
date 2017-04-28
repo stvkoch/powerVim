@@ -324,10 +324,10 @@ let g:syntastic_javascript_eslint_exec = 'eslint'
 "//set statusline+=%*
 "//let g:syntastic_always_populate_loc_list = 1
 "//let g:syntastic_auto_loc_list = 1
-"//let g:syntastic_check_on_open = 1
-"//let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 "//let g:syntastic_javascript_checkers = ['eslint']
-"//let g:syntastic_javascript_eslint = 1
+let g:syntastic_javascript_eslint = 1
 "//let g:syntastic_mode_map = { 'mode': 'active',
 "//                            \ 'active_filetypes': ['php', 'javascript'],
 "//                            \ 'passive_filetypes': [] }
@@ -376,6 +376,7 @@ let g:go_fmt_command                 = "goimports"
 
 let g:javascript_plugin_jsdoc = 1
 
+let g:gutentags_exclude_project_root = ['node_modules']
 
 "
 " plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -502,3 +503,5 @@ endif
 "
 " sources = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
+execute pathogen#infect()
+call pathogen#helptags()
