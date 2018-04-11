@@ -119,6 +119,8 @@ Bundle 'AutoComplPop'
 Bundle 'Yggdroot/indentLine'
 Bundle 'tpope/vim-fugitive'
 Bundle 'ivalkeen/vim-ctrlp-tjump'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'prettier/vim-prettier'
 " 
 " plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
@@ -188,8 +190,9 @@ endfunction
 " 4 - plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
 
+set background=dark
 "colorscheme Monokai
-"set background=dark
+colorscheme southernlights
 "colorscheme solarized
 "let g:solarized_termcolors=256
 
@@ -221,6 +224,7 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 " Tagbar
 "let g:tagbar_ctags_bin='/usr/local/bin/ctags' " Proper Ctags locations
 let g:tagbar_width=20                          " Default is 40, seems too wide
+let g:tagbar_autoclose=1
 noremap <silent> <Leader>y :TagbarToggle
 call tagbar#OpenWindow('fcj')
 let g:nerdtree_tabs_open_on_console_startup = 1
