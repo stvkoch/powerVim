@@ -122,6 +122,7 @@ Bundle 'ivalkeen/vim-ctrlp-tjump'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'prettier/vim-prettier'
 Bundle 'reewr/vim-monokai-phoenix'
+Bundle 'dhruvasagar/vim-table-mode'
 
 
 "
