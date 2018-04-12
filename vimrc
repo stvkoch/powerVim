@@ -55,12 +55,12 @@ set noswapfile
 set fileformats=unix,dos,mac
 set completeopt=menuone,longest,preview
 let mapleader = '\'
-highlight ColorColumn ctermbg=DarkGrey
+"highlight ColorColumn ctermbg=DarkGrey
 set colorcolumn=80
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
-set t_Co=256
+"set t_Co=256
 
 let &path = getcwd() . '/**'
 
@@ -121,10 +121,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'ivalkeen/vim-ctrlp-tjump'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'prettier/vim-prettier'
-" 
-" plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-"
-
+Bundle 'reewr/vim-monokai-phoenix'
 
 
 "
@@ -190,11 +187,16 @@ endfunction
 " 4 - plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
 
-set background=dark
-"colorscheme Monokai
-colorscheme southernlights
+"set background=dark
+colorscheme monokai-phoenix
+"colorscheme southernlights
 "colorscheme solarized
-"let g:solarized_termcolors=256
+"colorscheme mustang
+"let g:solarized_termcolors=16
+set t_Co=256
+set background=dark
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 
 
 if has('autocmd')
