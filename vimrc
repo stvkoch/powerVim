@@ -99,6 +99,7 @@ if executable('ctags')
   Bundle 'majutsushi/tagbar'
 endif
 Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'https://github.com/rosenfeld/conque-term'
 Bundle 'tpope/vim-commentary'
 Bundle 'mattn/emmet-vim'
@@ -190,6 +191,7 @@ endfunction
 
 "set background=dark
 colorscheme monokai-phoenix
+" colorscheme molokai_dark
 "colorscheme southernlights
 "colorscheme solarized
 "colorscheme mustang
@@ -223,16 +225,17 @@ let g:airline#extensions#syntastic#enabled = 1
 
 " NERDTree
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
+let g:nerdtree_tabs_open_on_console_startup = 1
+let NERDTreeWinSize = 20
+
 
 " Tagbar
 "let g:tagbar_ctags_bin='/usr/local/bin/ctags' " Proper Ctags locations
+call tagbar#OpenWindow('fj')
 let g:tagbar_width=20                          " Default is 40, seems too wide
-let g:tagbar_autoclose=1
+" let g:tagbar_autoclose=1
 noremap <silent> <Leader>y :TagbarToggle
-call tagbar#OpenWindow('fcj')
-let g:nerdtree_tabs_open_on_console_startup = 1
 
-let NERDTreeWinSize = 20
 
 
 " PHP complete extended
@@ -339,7 +342,7 @@ map <C-f> /
 map <Space> :nohlsearch<CR>/
 
 " indend / deindent after selecting the text with (⇧ v), (.) to repeat.
-vnoremap > >gv 
+vnoremap > >gv
 vnoremap < <gv
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
@@ -404,13 +407,17 @@ map <leader>fi :set foldmethod=indent<CR>
 
 " map <leader>p :ctrlp :pwd<CR>
 let g:ctrlp_cmd='CtrlP :pwd'
+" ctrlpjump use ctags file to show file list
 nnoremap <leader>w :CtrlPtjump<cr>
 vnoremap <leader>w :CtrlPtjumpVisual<cr>
+" open ctrl+p with word under cursor
 nmap <leader>p :CtrlP<CR><C-\>w
-"vmap <leader>p :CtrlP<CR><C-\>c
 " open buffer list
 map <leader>b :CtrlPBuffer<CR>
 
+
+" commentary
+map <leader>c :Commentary<CR>
 
 "
 " maps = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
