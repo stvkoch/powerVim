@@ -124,6 +124,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'prettier/vim-prettier'
 Bundle 'reewr/vim-monokai-phoenix'
 Bundle 'dhruvasagar/vim-table-mode'
+Bundle 'angamaiton/vim-snazzy'
 
 
 "
@@ -189,13 +190,15 @@ endfunction
 " 4 - plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
 
-"set background=dark
-colorscheme monokai-phoenix
+" colorscheme monokai-phoenix
 " colorscheme molokai_dark
-"colorscheme southernlights
-"colorscheme solarized
-"colorscheme mustang
-"let g:solarized_termcolors=16
+" colorscheme snazzy
+" colorscheme southernlights
+" colorscheme solarized
+" colorscheme gotham
+" colorscheme flattened_dark
+" colorscheme mustang
+" let g:solarized_termcolors=256
 set t_Co=256
 set background=dark
 highlight Normal ctermbg=NONE
@@ -219,7 +222,8 @@ let g:ctrlp_working_path_mode = 2
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
-let g:airline_theme             = 'molokai'
+" let g:airline_theme             = 'molokai'
+let g:airline_theme             = 'solarized'
 let g:airline#extensions#syntastic#enabled = 1
 
 
