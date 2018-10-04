@@ -19,6 +19,14 @@
 "
 " 1- vim configurations = = = = = = = = = = = = = = = = = = = = = = = =
 "
+
+let $tempFile = tempname()
+let $ctagTempFile = $tempFile
+" echo "Indexing ctags to " . $ctagTempFile
+let output = system("~/.powerVim/ctags/indexed.sh ".$ctagTempFile)
+
+set tags=$ctagTempFile
+
 set nocompatible
 filetype off
 set autoindent
@@ -65,7 +73,7 @@ endif
 let &path = getcwd() . '/**'
 
 " files types like:
-au BufNewFile,BufRead *.tag set filetype=javascript " tags is javascript files
+" au BufNewFile,BufRead *.tag set filetype=javascript " tags is javascript files
 
 "
 " vim configurations = = = = = = = = = = = = = = = = = = = = = = = =
@@ -110,7 +118,7 @@ Bundle 'JulesWang/css.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'joonty/vdebug.git'
+" Bundle 'joonty/vdebug.git'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite.vim'
 "Bundle 'm2mdas/phpcomplete-extended'
@@ -194,11 +202,11 @@ endfunction
 " colorscheme molokai_dark
 " colorscheme snazzy
 " colorscheme southernlights
-" colorscheme solarized
+colorscheme solarized
 " colorscheme gotham
 " colorscheme flattened_dark
 " colorscheme mustang
-" let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 set t_Co=256
 set background=dark
 highlight Normal ctermbg=NONE
@@ -422,7 +430,7 @@ map <leader>b :CtrlPBuffer<CR>
 
 " commentary
 map <leader>c :Commentary<CR>
-
+map <leader>. :CtrlPTag<CR>
 "
 " maps = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
@@ -440,11 +448,11 @@ if filereadable('.vimrc.local')
   source .vimrc.local
 endif
 
-if filereadable('.ctags/vimrc.ctag')
-  echo "Indexing ctags"
-  let output = system('./.ctags/indexed.sh')
-  source .ctags/vimrc.ctag
-endif
+ " 7 -- ctags --- config
+
+" if filereadable('.ctags/vimrc.ctag')
+  " source .ctags/vimrc.ctag
+" endif
 
 
 "
