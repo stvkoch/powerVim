@@ -1,8 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/stvkoch/.powerVim'
-let g:netrw_dirhist_2='/Users/stvkoch/Sites/steven/windguru-api'
-let g:netrw_dirhist_3='/Users/stvkoch'
-let g:netrw_dirhist_4='/Users/stvkoch/gocode/src/github.com/stvkoch/hello'
-let g:netrw_dirhist_5='/Users/stvkoch/Downloads/httprouter'
-let g:netrw_dirhist_6='/Users/stvkoch/gocode/src/github.com/stvkoch/http_middle_server'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/stevenkoch/.vim_runtime'
+let g:netrw_dirhist_2='/Users/stevenkoch/.vim_runtime/vimrcs'

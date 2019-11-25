@@ -143,6 +143,7 @@ ctags -f $1 -R \
 --exclude='node_modules' \
 --exclude='bower_components' \
 --exclude='dist' \
+--exclude='web' \
 --exclude='test' \
 --exclude='tests' \
 --exclude='.tmp' \

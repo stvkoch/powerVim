@@ -1,0 +1,29 @@
+" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+"
+" 1 - vim configurations
+" 2 - plugins
+" 3 - functions
+" 4 - plugins config
+" 5 - maps
+" 6 - sources
+"
+"
+"
+" by Steven Koch
+"
+" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+
+
+
+"
+" 1- vim configurations = = = = = = = = = = = = = = = = = = = = = = = =
+"
+
+let $tempFile = tempname()
+let $ctagTempFile = $tempFile
+echo "Indexing ctags to " . $ctagTempFile
+let output = system("~/.powerVim/ctags/indexed.sh ".$ctagTempFile)
+set tags=$ctagTempFile
+
+source ~/.vimrc

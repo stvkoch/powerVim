@@ -23,7 +23,7 @@
 let $tempFile = tempname()
 let $ctagTempFile = $tempFile
 " echo "Indexing ctags to " . $ctagTempFile
-let output = system("~/.powerVim/ctags/indexed.sh ".$ctagTempFile)
+" let output = system("~/.powerVim/ctags/indexed.sh ".$ctagTempFile)
 
 set tags=$ctagTempFile
 
@@ -112,10 +112,11 @@ Bundle 'https://github.com/rosenfeld/conque-term'
 Bundle 'tpope/vim-commentary'
 Bundle 'mattn/emmet-vim'
 Bundle 'fatih/vim-go'
-Bundle 'syntastic'
+"Bundle 'syntastic'
+Bundle 'dense-analysis/ale'
 Bundle 'supertab'
 Bundle 'JulesWang/css.vim'
-Bundle 'pangloss/vim-javascript'
+" Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
 Bundle 'airblade/vim-gitgutter'
 " Bundle 'joonty/vdebug.git'
@@ -133,6 +134,7 @@ Bundle 'prettier/vim-prettier'
 Bundle 'reewr/vim-monokai-phoenix'
 Bundle 'dhruvasagar/vim-table-mode'
 Bundle 'angamaiton/vim-snazzy'
+Bundle 'jremmen/vim-ripgrep'
 
 
 "
@@ -197,7 +199,6 @@ endfunction
 "
 " 4 - plugins config = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
-
 " colorscheme monokai-phoenix
 " colorscheme molokai_dark
 " colorscheme snazzy
@@ -212,6 +213,8 @@ set background=dark
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 
+let g:ale_linters = {'javascript': ['eslint']}
+
 
 if has('autocmd')
   filetype plugin indent on
@@ -221,7 +224,7 @@ endif
 
 
 " CtrlP
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/* 
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*
 " g:ctrlp_root_markers
 " let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_working_path_mode = 2
@@ -232,7 +235,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 " let g:airline_theme             = 'molokai'
 let g:airline_theme             = 'solarized'
-let g:airline#extensions#syntastic#enabled = 1
+" let g:airline#extensions#syntastic#enabled = 1
 
 
 " NERDTree
@@ -308,10 +311,10 @@ let g:indentLine_color_term = 239
 "let g:php_cs_fixer_dry_run = 1                    " Call command with dry-run option
 "let g:php_cs_fixer_verbose = 1                    " Return the output of command if 1, else an inline information.
 
-let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-let g:syntastic_php_phpcs_args='--standard=~/.ruleset.xml -n'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+" let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+" let g:syntastic_php_phpcs_args='--standard=~/.ruleset.xml -n'
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
 
 
 set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
@@ -448,10 +451,9 @@ if filereadable('.vimrc.local')
   source .vimrc.local
 endif
 
- " 7 -- ctags --- config
-
+" 7 -- ctags --- config
 " if filereadable('.ctags/vimrc.ctag')
-  " source .ctags/vimrc.ctag
+"   source .ctags/vimrc.ctag
 " endif
 
 
