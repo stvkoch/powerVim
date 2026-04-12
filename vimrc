@@ -6,6 +6,7 @@
 " 4 - plugins config
 " 5 - maps
 " 6 - sources
+" 7 - claude code integration
 "
 "
 "
@@ -88,53 +89,54 @@ let &path = getcwd() . '/**'
 " 2 - plugins = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
 "vundle plugin manager
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.powerVim/bundle/vundle/
+call vundle#begin('~/.powerVim/bundle')
+Plugin 'gmarik/vundle'
 
-" plugins
-Bundle 'runVimTests'
-Bundle 'foo.vim'
-Bundle 'tobyS/pdv'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'vim-scripts/perl-support.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'honza/vim-snippets'
+" -- navigation & files
+Plugin 'preservim/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'jremmen/vim-ripgrep'
+
+" -- git
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'wfxr/minimap.vim'
+
+" -- editing
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'mg979/vim-visual-multi'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'dhruvasagar/vim-table-mode'
+
+" -- ui & statusline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Yggdroot/indentLine'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'reewr/vim-monokai-phoenix'
+Plugin 'angamaiton/vim-snazzy'
 if executable('ctags')
-  Bundle 'majutsushi/tagbar'
+  Plugin 'preservim/tagbar'
 endif
-Bundle 'bling/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'https://github.com/rosenfeld/conque-term'
-Bundle 'tpope/vim-commentary'
-Bundle 'mattn/emmet-vim'
-Bundle 'fatih/vim-go'
-"Bundle 'syntastic'
-Bundle 'dense-analysis/ale'
-Bundle 'supertab'
-Bundle 'JulesWang/css.vim'
-" Bundle 'pangloss/vim-javascript'
-Bundle 'elzr/vim-json'
-Bundle 'airblade/vim-gitgutter'
-" Bundle 'joonty/vdebug.git'
-Bundle 'Shougo/vimproc.vim'
-Bundle 'Shougo/unite.vim'
-"Bundle 'm2mdas/phpcomplete-extended'
-Bundle 'junegunn/vim-easy-align'
-"Bundle 'Shougo/neocomplete.vim'
-Bundle 'AutoComplPop'
-Bundle 'Yggdroot/indentLine'
-Bundle 'tpope/vim-fugitive'
-Bundle 'ivalkeen/vim-ctrlp-tjump'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'prettier/vim-prettier'
-Bundle 'reewr/vim-monokai-phoenix'
-Bundle 'dhruvasagar/vim-table-mode'
-Bundle 'angamaiton/vim-snazzy'
-Bundle 'jremmen/vim-ripgrep'
+
+" -- linting & formatting
+Plugin 'dense-analysis/ale'
+Plugin 'prettier/vim-prettier'
+
+" -- language support
+Plugin 'fatih/vim-go'
+Plugin 'mattn/emmet-vim'
+Plugin 'JulesWang/css.vim'
+Plugin 'elzr/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'honza/vim-snippets'
+
+call vundle#end()
 
 
 "
@@ -246,49 +248,12 @@ let NERDTreeWinSize = 20
 
 " Tagbar
 "let g:tagbar_ctags_bin='/usr/local/bin/ctags' " Proper Ctags locations
-call tagbar#OpenWindow('fj')
 let g:tagbar_width=20                          " Default is 40, seems too wide
 " let g:tagbar_autoclose=1
 noremap <silent> <Leader>y :TagbarToggle
 
 
 
-" PHP complete extended
-autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
-
-"Neo complete
-"let g:neocomplete#enable_at_startup = 1
-"let g:neocomplete#sources#tags#cache_limit_size = 5000000
-"let g:neocomplete#enable_smart_case = 1
-"let g:neocomplete#sources#syntax#min_keyword_length = 3
-"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-"inoremap <expr><C-g>     neocomplete#undo_completion()
-"inoremap <expr><C-l>     neocomplete#complete_common_string()
-"function! s:my_cr_function()
-"  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-"endfunction
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-"let php_sql_query=1
-"let php_htmlInStrings=1
-"if !exists('g:neocomplete#sources#omni#input_patterns')
-"  let g:neocomplete#sources#omni#input_patterns = {}
-"endif
-"let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-"set completeopt=longest,menuone
-"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-"inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-"  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-"
-"inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-"  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 
 
@@ -299,39 +264,8 @@ let g:indentLine_enabled = 1
 let g:indentLine_color_term = 239
 
 
-" php fixer
-" If php-cs-fixer is in $PATH, you don't need to define line below
-" let g:php_cs_fixer_path = "~/php-cs-fixer.phar" " define the path to the php-cs-fixer.phar
-"let g:php_cs_fixer_level = "symfony"              " which level ?
-"let g:php_cs_fixer_config = "default"             " configuration
-"let g:php_cs_fixer_php_path = "php"               " Path to PHP
-"" If you want to define specific fixers:
-""let g:php_cs_fixer_fixers_list = "linefeed,short_tag,indentation"
-"let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
-"let g:php_cs_fixer_dry_run = 1                    " Call command with dry-run option
-"let g:php_cs_fixer_verbose = 1                    " Return the output of command if 1, else an inline information.
-
-" let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-" let g:syntastic_php_phpcs_args='--standard=~/.ruleset.xml -n'
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-
-
-set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
-let OmniCpp_GlobalScopeSearch   = 1
-let OmniCpp_DisplayMode         = 1
-let OmniCpp_ShowScopeInAbbr     = 0 "do not show namespace in pop-up
-let OmniCpp_ShowPrototypeInAbbr = 1 "show prototype in pop-up
-let OmniCpp_ShowAccess          = 1 "show access in pop-up
-let OmniCpp_SelectFirstItem     = 1 "select first item in pop-up
+set omnifunc=syntaxcomplete#Complete
 set completeopt=menuone,menu,longest
-
-" au FileType php set omnifunc=phpcomplete#CompletePHP
-let php_sql_query=1
-let php_htmlInStrings=1
-
-let g:phpcomplete_relax_static_constraint = 1
-let g:phpcomplete_complete_for_unknown_classes = 1
 
 
 
@@ -412,8 +346,8 @@ xnoremap  '  s''<Esc>P<Right>
 xnoremap  "  s""<Esc>P<Right>
 xnoremap  `  s``<Esc>P<Right>
 
-" enable term in window
-map <C-x> :ConqueTerm bash<CR>
+" open terminal in split
+map <C-x> :below terminal<CR>
 
 
 " \fi enable folding by indent
@@ -422,9 +356,9 @@ map <leader>fi :set foldmethod=indent<CR>
 
 " map <leader>p :ctrlp :pwd<CR>
 let g:ctrlp_cmd='CtrlP :pwd'
-" ctrlpjump use ctags file to show file list
-nnoremap <leader>w :CtrlPtjump<cr>
-vnoremap <leader>w :CtrlPtjumpVisual<cr>
+" jump to tag under cursor
+nnoremap <leader>w :tag <C-r><C-w><CR>
+vnoremap <leader>w :tag <C-r><C-w><CR>
 " open ctrl+p with word under cursor
 nmap <leader>p :CtrlP<CR><C-\>w
 " open buffer list
@@ -434,6 +368,15 @@ map <leader>b :CtrlPBuffer<CR>
 " commentary
 map <leader>c :Commentary<CR>
 map <leader>. :CtrlPTag<CR>
+
+" git changemap sidebar
+nnoremap <leader>gm :ChangeMapToggle<CR>
+
+" minimap
+let g:minimap_width = 10
+let g:minimap_auto_start = 1
+let g:minimap_git_colors = 1
+nnoremap <leader>mm :MinimapToggle<CR>
 "
 " maps = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 "
@@ -458,6 +401,61 @@ endif
 
 
 "
-" sources = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+" sources = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+"
+
+
+
+"
+" 7 - claude code integration = = = = = = = = = = = = = = = = = = = = =
+"
+
+" open claude code in a terminal split
+function! ClaudeOpen()
+  below terminal ++close claude
+endfunction
+
+" send visual selection to claude with a prompt
+function! ClaudeAsk(prompt) range
+  let l:lines = getline(a:firstline, a:lastline)
+  let l:text = join(l:lines, "\n")
+  let l:tmpfile = tempname()
+  call writefile(split(l:text, "\n"), l:tmpfile)
+  let l:file = expand('%:t')
+  let l:ft = &filetype
+  execute 'below terminal ++close claude -p "' . a:prompt . ' (from ' . l:file . ', ' . l:ft . '):\n$(cat ' . l:tmpfile . ')"'
+endfunction
+
+" send current file to claude for review
+function! ClaudeReview()
+  let l:file = expand('%:p')
+  execute 'below terminal ++close claude -p "Review this file for bugs, security issues, and improvements: ' . l:file . '"'
+endfunction
+
+" ask claude a question in a terminal split
+function! ClaudeQuestion()
+  call inputsave()
+  let l:question = input('Ask Claude: ')
+  call inputrestore()
+  if l:question != ''
+    execute 'below terminal ++close claude -p "' . l:question . '"'
+  endif
+endfunction
+
+" \cc  - open claude code interactive session
+nnoremap <Leader>cc :call ClaudeOpen()<CR>
+" \cr  - review current file
+nnoremap <Leader>cr :call ClaudeReview()<CR>
+" \cq  - ask claude a question
+nnoremap <Leader>cq :call ClaudeQuestion()<CR>
+" \ca  - ask claude about selected code (visual mode)
+vnoremap <Leader>ca :call ClaudeAsk("Explain this code")<CR>
+" \cf  - ask claude to fix selected code (visual mode)
+vnoremap <Leader>cf :call ClaudeAsk("Find bugs and suggest fixes for this code")<CR>
+" \ct  - ask claude to write tests for selected code (visual mode)
+vnoremap <Leader>ct :call ClaudeAsk("Write tests for this code")<CR>
+
+"
+" claude code = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 "
 

@@ -293,9 +293,40 @@ This align all '=' selected
 
 ### Open terminal bash on current windows
 
-  - first split your windows *C-w + s* (if you want)
-  - next active conqueTerm inside of splited window with *C-x*
+  - *C-x* - open terminal in a split below
 
+
+### Git Changemap (bird's-eye view of git changes)
+
+  - *\gm* - toggle the git changemap sidebar
+  - *:ChangeMapToggle* - same as \gm
+  - *:ChangeMapRefresh* - force refresh the map
+
+  Shows a narrow sidebar on the right with a condensed view of the file:
+  *+* added lines (green), *~* modified lines (yellow), *-* deleted lines (red).
+  A cursor indicator syncs as you navigate. Refreshes on save and git changes.
+  Requires `vim-gitgutter` (included).
+
+
+### Claude Code integration
+
+  - *\cc* - open Claude Code interactive session in a terminal split
+  - *\cr* - ask Claude to review the current file for bugs and improvements
+  - *\cq* - type a freeform question and get Claude's answer in a split
+  - *\ca* - (visual) explain selected code
+  - *\cf* - (visual) find bugs and suggest fixes for selected code
+  - *\ct* - (visual) write tests for selected code
+
+  Workflow: select code with *shift+v*, then press *\ca* to explain, *\cf* to fix, or *\ct* to generate tests.
+  Requires Claude Code CLI installed (`claude`).
+
+
+## Dependencies
+
+  - **code-minimap** — required by `minimap.vim` for the code minimap sidebar with git change highlights
+    ```
+    brew install code-minimap
+    ```
 
 # Install
 
